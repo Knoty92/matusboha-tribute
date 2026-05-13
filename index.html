@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MatusBoha — tribút</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, #0a0f1a 0%, #0f1a2a 50%, #0a0f1a 100%);
+            color: #d0e0f0;
+            min-height: 100vh;
+            padding: 2rem 1rem;
+        }
+        .container { max-width: 800px; margin: 0 auto; }
+        .hero {
+            text-align: center; padding: 4rem 1rem 3rem; position: relative; overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle at 50% 50%, rgba(96,165,250,0.08) 0%, transparent 60%);
+            animation: pulse 6s ease-in-out infinite; pointer-events: none;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 1; }
+        }
+        .hero h1 {
+            font-size: 3.5rem; font-weight: 800;
+            background: linear-gradient(135deg, #60a5fa, #4d96ff, #2563eb);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text; position: relative;
+        }
+        .hero .subtitle { font-size: 1.2rem; color: #7090a0; margin-top: 0.8rem; position: relative; }
+        .hero .emoji-row { margin-top: 1.5rem; font-size: 2rem; position: relative; }
+
+        .message {
+            background: linear-gradient(135deg, rgba(96,165,250,0.08), rgba(37,99,235,0.05));
+            border: 1px solid rgba(96,165,250,0.2); border-radius: 16px;
+            padding: 2rem; text-align: center; margin: 2rem 0;
+        }
+        .message h2 { font-size: 1.6rem; color: #d0e0f0; margin-bottom: 0.8rem; }
+        .message p { font-size: 0.95rem; color: #90a0b0; line-height: 1.7; max-width: 600px; margin: 0 auto; }
+
+        .stats {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem; margin: 2rem 0;
+        }
+        .stat-card {
+            background: rgba(255,255,255,0.03); border: 1px solid rgba(96,165,250,0.15);
+            border-radius: 12px; padding: 1.2rem; text-align: center;
+        }
+        .stat-card .num {
+            font-size: 2rem; font-weight: 800;
+            background: linear-gradient(135deg, #60a5fa, #4d96ff);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .stat-card .label { font-size: 0.7rem; color: #7090a0; margin-top: 0.3rem; text-transform: uppercase; letter-spacing: 0.05em; }
+
+        .section-title {
+            font-size: 1.4rem; font-weight: 700; margin: 3rem 0 1.5rem;
+            padding: 0 0 0.5rem 1rem; border-left: 3px solid #60a5fa; color: #b0d0f0;
+        }
+
+        .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .card {
+            background: rgba(255,255,255,0.03); border: 1px solid rgba(96,165,250,0.12);
+            border-radius: 12px; padding: 1.5rem;
+        }
+        .card .icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+        .card h3 { font-size: 1rem; color: #b0d0f0; margin-bottom: 0.5rem; }
+        .card p { font-size: 0.85rem; color: #8090a0; line-height: 1.6; }
+        .card em { color: #60a5fa; font-style: normal; }
+
+        .footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid rgba(96,165,250,0.1); text-align: center; }
+        .footer p { font-size: 0.8rem; color: #506070; }
+        .footer a { color: #60a5fa; text-decoration: none; }
+
+        @media (max-width: 700px) {
+            .hero h1 { font-size: 2.2rem; }
+            .card-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1>MatusBoha</h1>
+            <div class="subtitle">Backend lord • BE engine room • Part of the Stack</div>
+            <div class="emoji-row">⚙️ 🏰 🛡️ 💻 ☕</div>
+        </div>
+
+        <div class="message">
+            <h2>Matus, si chlap 🙌</h2>
+            <p>
+                Castle-game backend stojí na tvojich pleciach. Combat systém, movement, fog of war, 
+                celý ten zázrak čo beží na serveri — to je tvoja práca.
+            </p>
+            <p style="margin-top:0.8rem;">
+                Bez teba by z toho bola len kopa SVG. Si engine room tohodle celého.
+            </p>
+        </div>
+
+        <div class="stats">
+            <div class="stat-card">
+                <div class="num">∞</div>
+                <div class="label">Commitov do castle-game</div>
+            </div>
+            <div class="stat-card">
+                <div class="num">⚙️</div>
+                <div class="label">BE architekt</div>
+            </div>
+            <div class="stat-card">
+                <div class="num">🏰</div>
+                <div class="label">Castle-game pilier</div>
+            </div>
+            <div class="stat-card">
+                <div class="num">💪</div>
+                <div class="label">Vždy ready makat</div>
+            </div>
+        </div>
+
+        <div class="section-title">❤️ Čo na ňom oceňujeme</div>
+        <div class="card-grid">
+            <div class="card">
+                <div class="icon">⚙️</div>
+                <h3>Backend mág</h3>
+                <p>Celý <em>castle-game</em> backend — od movementu cez combat až po fog of war. Bez neho by hra neexistovala.</p>
+            </div>
+            <div class="card">
+                <div class="icon">🎯</div>
+                <h3>Ťahá projekt</h3>
+                <p>Keď treba makat, Matus je prvý. Keď treba debugovať, Matus je pri tom. Keď treba posunúť deadline... no, to je iná vec 😄</p>
+            </div>
+            <div class="card">
+                <div class="icon">💡</div>
+                <h3>Technický víz</h3>
+                <p>Vie čo funguje a čo nie. Jeho architektonické rozhodnutia držia celý projekt pokope.</p>
+            </div>
+            <div class="card">
+                <div class="icon">🤝</div>
+                <h3>Tímový hráč</h3>
+                <p>Vždy ochotný pomôcť, vysvetliť, prediskutovať. Presne ten typ človeka bez ktorého by to nebolo ono.</p>
+            </div>
+            <div class="card">
+                <div class="icon">💬</div>
+                <h3>Humor a nadhľad</h3>
+                <p>"vsetko sa nam hrouti v prstoch" — a aj tak to dotiahneme. Pretože Matus je v tíme.</p>
+            </div>
+            <div class="card">
+                <div class="icon">🏆</div>
+                <h3>MVP hráč</h3>
+                <p>Od Hexu cez castle-game až po Aurelium — vždy tam kde treba. Backbone štúdia.</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>🔥 MatusBoha — BE engine room, vždy ready. <a href="https://github.com/Knoty92/matusboha-tribute">GitHub</a></p>
+        </div>
+    </div>
+</body>
+</html>
